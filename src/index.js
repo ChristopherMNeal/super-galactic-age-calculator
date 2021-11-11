@@ -15,15 +15,15 @@ function longevityInput() {
 
 function remainingYears() {
   const userDemographic = longevityInput();
-  const lifeExpectancy = longevityAdjuster(userDemographic);
+  const lifeExpectancy = userDemographic.longevityAdjuster();
   const age = $("#user-age").val();
   const planet = $("input:radio[name=planet]:checked").val();
-  const yearsLeft = lifeExpectancy - age;
+  let yearsLeft = lifeExpectancy - age;
   if (age > lifeExpectancy) {
     yearsLeft *= -1;
-    return `Congrats! You've made it ${yearsLeft} ${planet}-years past your life expectancy on ${planet}!`
+    return `Congrats! You've made it ${yearsLeft} ${planet}-years past your life expectancy on ${planet}!`;
   } else {
-    return `You have ${yearsLeft} ${planet}-years to live on ${planet}.`
+    return `You have ${yearsLeft} ${planet}-years to live on ${planet}.`;
   }
 }
 
@@ -36,5 +36,7 @@ $(document).ready(function() {
 
     const ageOnPlanet = calculator(age, planet);
     const yearsLeft = remainingYears();
+
+    $("#results").text(`Here are your results, ${name}, your age in ${planet} years is ${ageOnPlanet}. ${yearsLeft}`);
   });
 });
