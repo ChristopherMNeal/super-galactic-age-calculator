@@ -23,10 +23,10 @@
       <input type="radio" id="jupiter" name="planet" value="Jupiter">
       <label for="jupiter">Jupiter</label>
       <h2>Next, tell me a little about yourself so we can determine your life expectancy:</h2>
-      <p>The average United States life expectancy is about 79 earth years. WARNING! This is not real health advice. The numbers are made up. If you're worried about your health, consult a doctor, not an online quiz.</p>
+      <p>The average United States life expectancy is about 79 earth years.<br>WARNING! This is not real health advice. The numbers are made up. If you're worried about your health, consult a doctor, not an online quiz.</p>
       <h3>Does your family have any of the following health complications?</h3>
       <input type="checkbox" id="heart-disease" name="genetics" value="heart-disease">
-      <label for="heart-disease"></label>Heart Disease<br>
+      <label for="heart-disease">Heart Disease</label><br>
       <input type="checkbox" id="cancer" name="genetics" value="cancer">
       <label for="cancer">Cancer</label><br>
       <input type="checkbox" id="stroke" name="genetics" value="stroke">
@@ -55,9 +55,10 @@
       <input type="checkbox" id="livelaughlove" name="lifestyle-pos" value="livelaughlove">
       <label for="livelaughlove">Live, Laugh, Love!</label><br>
       <button type="submit">Submit</button>
-      <p class="alert" id="too-old">There's no way you're that old!</p>
-      <p class="alert" id="no-input">Please fill out the entire form!</p>
     </form>
+    <p class="alerts" id="too-old">There's no way you're that old!</p>
+    <p class="alerts" id="no-input">Please fill out the entire form!</p>
+    <div class="results"></div>
   </div>
 </body>
 </html>
