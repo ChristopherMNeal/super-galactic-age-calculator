@@ -6,7 +6,8 @@ export class Demographic {
   }
   longevityAdjuster() {
     let lifeExpectancy = 79;
-    lifeExpectancy *= ((100 - (this.geneticFactors * 3))/100);
-    return lifeExpectancy;
+    const longevityPercents = this.geneticFactors * 3 + this.lifestyleNegatives * 2 - this.lifestylePositives * 2.5;
+    lifeExpectancy *= ((100 - (longevityPercents))/100);
+    return parseFloat((lifeExpectancy).toFixed(2));
   }
 }
