@@ -6,11 +6,11 @@
 <body>
   <div class="container">
     <h1>Determine your age on different planets!</h1>
-    <form>
+    <form id="user-info">
       <label for="name"><h3>What's your name?</h3></label>
-      <input type="text" id="name" placeholder="Your Name">
-      <label for="age"><h3>Please input your age in Earth years:</h3></label>
-      <input type="number" id="age">
+      <input type="text" id="user-name" placeholder="Your Name">
+      <label for="user-age"><h3>Please input your age in Earth years:</h3></label>
+      <input type="number" id="user-age">
       <h3>Please select a planet:</h3>
       <input type="radio" id="earth" name="planet" value="Earth">
       <label for="earth">Earth</label>
@@ -58,7 +58,7 @@
     </form>
     <p class="alerts" id="too-old">There's no way you're that old!</p>
     <p class="alerts" id="no-input">Please fill out the entire form!</p>
-    <div class="results"></div>
+    <div id="results"></div>
   </div>
 </body>
 </html>

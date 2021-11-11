@@ -9,5 +9,6 @@ export const planets = new Map(
 );
 
 export function calculator(age, planet) {
-  return parseFloat((age/planets.get(planet)).toFixed(2));
+  const ageInt = parseInt(age);
+  return parseFloat((ageInt/planets.get(planet)).toFixed(2));
 }
