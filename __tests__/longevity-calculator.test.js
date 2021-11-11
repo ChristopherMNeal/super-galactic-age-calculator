@@ -15,4 +15,8 @@ describe('Demographic', () => {
     const myDemographic = new Demographic(1, 0, 0);
     expect(myDemographic.longevityAdjuster()).toBe(76.63);
   });
+  test('Should return adjusted US life expectancy when multiple genetic factors are inputted.', () => {
+    const myDemographic = new Demographic(1, 1, 1);
+    expect(myDemographic.longevityAdjuster()).toBe(73.08);
+  });
 });
