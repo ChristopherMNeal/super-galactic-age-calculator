@@ -17,7 +17,7 @@
 
 ## Description
 
-_This project was created for Epicodus bootcamp to show proficiency in the technologies used, especially Jest testing, npm, webpack. The user can input their age and lifestyle information into the calculator and see how old they would be and their estimated remaining years on four different planets in our solar system._
+_This project was created for Epicodus bootcamp to show proficiency in the technologies used, especially Jest testing, npm, webpack. The user can input their age and lifestyle information into the calculator and see how old they would be and their estimated remaining years on five different planets in our solar system._
 
 ## Setup/Installation Requirements
 
@@ -39,7 +39,7 @@ _None at this time_
 ## License
 
 _[MIT](https://opensource.org/licenses/MIT)_
-Copyright (c) _2021_ _Christopher Neal_
+Copyright (c) _11 November 2021_ _Christopher Neal_
 
 ## Support and Contact Details
 * _[christopher.m.neal@gmail.com](mailto:christopher.m.neal@gmail.com)_
