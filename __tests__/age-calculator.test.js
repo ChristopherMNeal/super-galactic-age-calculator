@@ -18,5 +18,8 @@ describe ('calculator', () => {
   });
   test('Should return age on Mercury when recieving age on Earth', () => {
     expect(calculator(age, "Mercury")).toBe(142);
+    expect(calculator(age, "Venus")).toBe(55);
+    expect(calculator(age, "Mars")).toBe(18);
+    expect(calculator(age, "Jupiter")).toBe(3);
   });
 });
