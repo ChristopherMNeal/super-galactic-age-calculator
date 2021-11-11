@@ -34,10 +34,20 @@ $(document).ready(function() {
     const name = $("#user-name").val();
     const age = $("#user-age").val();
     const planet = $("input:radio[name=planet]:checked").val();
-
     const ageOnPlanet = calculator(age, planet);
     const yearsLeft = remainingYears();
-
-    $("#results").text(`Here are your results, ${name}, your age in ${planet} years is ${ageOnPlanet}. ${yearsLeft}`);
+    if (age > 120) {
+      $(".alerts").hide();
+      $("#too-old").show();
+    } else if (age < 0) {
+      $(".alerts").hide();
+      $("#too-young").show();
+    } else if (!name || !age || !planet) {
+      $(".alerts").hide();
+      $("#no-input").show();
+    } else {
+      $(".alerts").hide();
+      $("#results").html("Here are your results, " + name + "<br>Your age in " + planet + " years is " + ageOnPlanet + ". <br>" + yearsLeft);
+    }
   });
 });
