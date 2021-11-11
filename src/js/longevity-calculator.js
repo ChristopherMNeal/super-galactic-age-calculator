@@ -4,8 +4,9 @@ export class Demographic {
     this.lifestyleNegatives = lifestyleNegatives;
     this.lifestylePositives = lifestylePositives;
   }
+  longevityAdjuster() {
+    return 79;
+  }
 }
 
-export function longevityAdjuster(demographicClass) {
-  return 79;
-}
+const myDemographic = new Demographic(0, 0, 0);
