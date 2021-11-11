@@ -7,5 +7,5 @@ export class Demographic {
 }
 
 export function longevityAdjuster(demographicClass) {
-
+  return 79;
 }
