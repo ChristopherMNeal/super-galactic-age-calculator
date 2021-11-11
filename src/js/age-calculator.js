@@ -9,4 +9,5 @@ export const planets = new Map(
 );
 
 export function calculator(age, planet) {
+  return age;
 }
