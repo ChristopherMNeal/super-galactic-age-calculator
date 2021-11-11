@@ -1,4 +1,5 @@
 import { planets } from '../src/js/age-calculator.js';
+import { calculator } from '../src/js/age-calculator';
 
 describe ('planets', () => {
   test('Should return information about each planet', () => {
