@@ -9,3 +9,10 @@ describe ('planets', () => {
     expect(planets.get("Jupiter")).toBe(11.86);
   });
 });
+
+describe ('calculator', () => {
+  test('Should return age on earth when recieveing age on earth' () => {
+    const age = 34;
+    expect(calculator(age, "Earth").toBe(34);
+  })
+})

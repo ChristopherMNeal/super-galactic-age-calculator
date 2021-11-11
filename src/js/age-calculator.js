@@ -7,3 +7,6 @@ export const planets = new Map(
     ["Jupiter", 11.86]
   ]
 );
+
+export function calculator(age, planet) {
+}
