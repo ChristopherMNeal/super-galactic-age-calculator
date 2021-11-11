@@ -5,3 +5,7 @@ export class Demographic {
     this.lifestylePositives = lifestylePositives;
   }
 }
+
+export function longevityAdjuster(demographicClass) {
+
+}
