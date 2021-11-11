@@ -1,3 +1,10 @@
 body {
   background-color: lightblue;
 }
+
+.alerts {
+  display: none;
+  color: red;
+  font-size: 2em;
+  font-style: italic;
+}
