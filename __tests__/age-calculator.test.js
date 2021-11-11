@@ -11,8 +11,8 @@ describe ('planets', () => {
 });
 
 describe ('calculator', () => {
-  test('Should return age on earth when recieveing age on earth' () => {
+  test('Should return age on earth when recieveing age on earth', () => {
     const age = 34;
-    expect(calculator(age, "Earth").toBe(34);
-  })
-})
+    expect(calculator(age, "Earth")).toBe(34);
+  });
+});
