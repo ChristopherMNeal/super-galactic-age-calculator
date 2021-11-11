@@ -17,14 +17,30 @@ function remainingYears() {
   const userDemographic = longevityInput();
   const lifeExpectancy = userDemographic.longevityAdjuster();
   const age = $("#user-age").val();
+  const convertedAge = animalYears(age);
+  const convertedLifeExpectancy = animalYears(lifeExpectancy);
   const planet = $("input:radio[name=planet]:checked").val();
-  let yearsLeft = lifeExpectancy - age;
-  let planetYearsLeft = calculator(yearsLeft, planet);
-  if (age > lifeExpectancy) {
-    yearsLeft *= -1;
-    return `Congrats! You've made it ${planetYearsLeft} ${planet} years past your life expectancy!`;
+  let animalPlanet;
+  if ($("input:radio[name=animal-years]:checked").val() === "dog-years") {
+    animalPlanet = planet + " dog";
   } else {
-    return `You have ${planetYearsLeft} ${planet} years to live.`;
+    animalPlanet = planet;
+  }
+  let yearsLeft = convertedLifeExpectancy - convertedAge;
+  let planetYearsLeft = calculator(yearsLeft, planet);
+  if (convertedAge > convertedLifeExpectancy) {
+    yearsLeft *= -1;
+    return `Congrats! You've made it ${planetYearsLeft} ${animalPlanet} years past your life expectancy!`;
+  } else {
+    return `You have ${planetYearsLeft} ${animalPlanet} years to live.`;
+  }
+}
+
+function animalYears(age) {
+  if ($("input:radio[name=animal-years]:checked").val() === "dog-years") {
+    return age *= 8;
+  } else {
+    return age;
   }
 }
 
@@ -33,8 +49,15 @@ $(document).ready(function() {
     event.preventDefault();
     const name = $("#user-name").val();
     const age = $("#user-age").val();
+    const convertedAge = animalYears(age);
     const planet = $("input:radio[name=planet]:checked").val();
-    const ageOnPlanet = calculator(age, planet);
+    let animalPlanet;
+    if ($("input:radio[name=animal-years]:checked").val() === "dog-years") {
+      animalPlanet = planet + " dog";
+    } else {
+      animalPlanet = planet;
+    }
+    const ageOnPlanet = calculator(convertedAge, planet);
     const yearsLeft = remainingYears();
     if (age > 120) {
       $(".alerts").hide();
@@ -47,7 +70,7 @@ $(document).ready(function() {
       $("#no-input").show();
     } else {
       $(".alerts").hide();
-      $("#results").html("Here are your results, " + name + "<br>Your age in " + planet + " years is " + ageOnPlanet + ". <br>" + yearsLeft);
+      $("#results").html("Here are your results, " + name + "<br>Your age in " + animalPlanet + " years is " + ageOnPlanet + ". <br>" + yearsLeft);
     }
   });
 });
