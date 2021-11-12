@@ -52,6 +52,15 @@ function getAnimalPlanet() {
   }
 }
 
+function getSunComparison(age, animalPlanet) {
+  const ageComparison = age/4603000000;
+  if ($("input:radio[name=animal-years]:checked").val() === "mayfly-lifetimes") {
+    return `By comparison, the sun is 4.6 billion years old... That's ${ageComparison} times in Earth years than you are in ${animalPlanet}.`;
+  } else {
+    return "";
+  }
+}
+
 $(document).ready(function() {
   $("form#user-info").submit(function(event) {
     event.preventDefault();
@@ -59,21 +68,21 @@ $(document).ready(function() {
     const age = $("#user-age").val();
     const animalAge = animalYears(age);
     const planet = $("input:radio[name=planet]:checked").val();
-    const animalPlanet = getAnimalPlanet();
     const ageOnPlanet = calculator(animalAge, planet);
+    const animalPlanet = getAnimalPlanet();
+    const sunComparison = getSunComparison(ageOnPlanet, animalPlanet);
     const yearsLeft = remainingYears();
+    $(".alerts").hide();
+    $("#results").hide();
     if (age > 120) {
-      $(".alerts").hide();
       $("#too-old").show();
     } else if (age < 0) {
-      $(".alerts").hide();
       $("#too-young").show();
     } else if (!name || !age || !planet) {
-      $(".alerts").hide();
       $("#no-input").show();
     } else {
-      $(".alerts").hide();
-      $("#results").html("Here are your results, " + name + "<br>Your age in " + animalPlanet + " is " + ageOnPlanet + ". <br>" + yearsLeft);
+      $("#results").show();
+      $("#results").html("Here are your results, " + name + "<br>Your age in " + animalPlanet + " is " + ageOnPlanet + ". <br>" + sunComparison + yearsLeft);
     }
   });
 });
