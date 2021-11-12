@@ -27,7 +27,7 @@ function remainingYears() {
     yearsLeft *= -1;
     return `Congrats! You've made it ${planetYearsLeft} ${animalPlanet} past your life expectancy!`;
   } else {
-    return `You have ${planetYearsLeft} ${animalPlanet} to live.`;
+    return `You have ${planetYearsLeft} ${animalPlanet} left to live.`;
   }
 }
 
@@ -53,9 +53,9 @@ function getAnimalPlanet() {
 }
 
 function getSunComparison(age, animalPlanet) {
-  const ageComparison = age/4603000000;
+  const ageComparison = parseInt(4603000000/age);
   if ($("input:radio[name=animal-years]:checked").val() === "mayfly-lifetimes") {
-    return `By comparison, the sun is 4.6 billion years old... That's ${ageComparison} times in Earth years than you are in ${animalPlanet}.`;
+    return `By comparison, the sun is 4.6 billion years old... That's ${ageComparison} times older (in Earth years) than you are (in ${animalPlanet}).<br>`;
   } else {
     return "";
   }
