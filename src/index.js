@@ -24,7 +24,7 @@ function remainingYears() {
   let yearsLeft = convertedLifeExpectancy - convertedAge;
   let planetYearsLeft = calculator(yearsLeft, planet);
   if (convertedAge > convertedLifeExpectancy) {
-    yearsLeft *= -1;
+    planetYearsLeft *= -1;
     return `Congrats! You've made it ${planetYearsLeft} ${animalPlanet} past your life expectancy!`;
   } else {
     return `You have ${planetYearsLeft} ${animalPlanet} left to live.`;
