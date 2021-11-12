@@ -20,27 +20,35 @@ function remainingYears() {
   const convertedAge = animalYears(age);
   const convertedLifeExpectancy = animalYears(lifeExpectancy);
   const planet = $("input:radio[name=planet]:checked").val();
-  let animalPlanet;
-  if ($("input:radio[name=animal-years]:checked").val() === "dog-years") {
-    animalPlanet = planet + " dog";
-  } else {
-    animalPlanet = planet;
-  }
+  const animalPlanet = getAnimalPlanet();
   let yearsLeft = convertedLifeExpectancy - convertedAge;
   let planetYearsLeft = calculator(yearsLeft, planet);
   if (convertedAge > convertedLifeExpectancy) {
     yearsLeft *= -1;
-    return `Congrats! You've made it ${planetYearsLeft} ${animalPlanet} years past your life expectancy!`;
+    return `Congrats! You've made it ${planetYearsLeft} ${animalPlanet} past your life expectancy!`;
   } else {
-    return `You have ${planetYearsLeft} ${animalPlanet} years to live.`;
+    return `You have ${planetYearsLeft} ${animalPlanet} to live.`;
   }
 }
 
 function animalYears(age) {
   if ($("input:radio[name=animal-years]:checked").val() === "dog-years") {
     return age *= 8;
+  } else if ($("input:radio[name=animal-years]:checked").val() === "mayfly-lifetimes") {
+    return age *= 105120;
   } else {
     return age;
+  }
+}
+
+function getAnimalPlanet() {
+  const planet = $("input:radio[name=planet]:checked").val();
+  if ($("input:radio[name=animal-years]:checked").val() === "dog-years") {
+    return planet + " dog years";
+  } else if ($("input:radio[name=animal-years]:checked").val() === "mayfly-lifetimes") {
+    return planet + " mayfly lifetimes";
+  } else {
+    return planet + " years";
   }
 }
 
@@ -49,15 +57,10 @@ $(document).ready(function() {
     event.preventDefault();
     const name = $("#user-name").val();
     const age = $("#user-age").val();
-    const convertedAge = animalYears(age);
+    const animalAge = animalYears(age);
     const planet = $("input:radio[name=planet]:checked").val();
-    let animalPlanet;
-    if ($("input:radio[name=animal-years]:checked").val() === "dog-years") {
-      animalPlanet = planet + " dog";
-    } else {
-      animalPlanet = planet;
-    }
-    const ageOnPlanet = calculator(convertedAge, planet);
+    const animalPlanet = getAnimalPlanet();
+    const ageOnPlanet = calculator(animalAge, planet);
     const yearsLeft = remainingYears();
     if (age > 120) {
       $(".alerts").hide();
@@ -70,7 +73,7 @@ $(document).ready(function() {
       $("#no-input").show();
     } else {
       $(".alerts").hide();
-      $("#results").html("Here are your results, " + name + "<br>Your age in " + animalPlanet + " years is " + ageOnPlanet + ". <br>" + yearsLeft);
+      $("#results").html("Here are your results, " + name + "<br>Your age in " + animalPlanet + " is " + ageOnPlanet + ". <br>" + yearsLeft);
     }
   });
 });

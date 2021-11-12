@@ -12,7 +12,9 @@ body {
 
 .aside {
   font-style: italic;
-  text-indent: 3ch;
+  text-indent: 2ch;
   font-weight: 500;
   font-size: .9em;
+  margin-bottom: -3px;
+  color:rgba(0, 0, 0, 0.575);
 }
