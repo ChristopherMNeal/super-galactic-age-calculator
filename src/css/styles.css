@@ -18,3 +18,19 @@ body {
   margin-bottom: -3px;
   color:rgba(0, 0, 0, 0.575);
 }
+
+#results {
+  border: black, dotted, 2px;
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.6em;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 500;
+}
+
+#bottom-padding {
+  height: 100px;
+  visibility: hidden;
+}
