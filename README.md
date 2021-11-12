@@ -34,7 +34,8 @@ _None at this time_
 
 ## Future Updates
 
-* _TBD_
+* _Improve page readability with Bootstrap columns and CSS styling._
+* _Add cosmic background to match the theme._
 
 ## License
 
