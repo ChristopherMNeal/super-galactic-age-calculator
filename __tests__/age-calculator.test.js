@@ -22,8 +22,11 @@ describe ('calculator', () => {
     expect(calculator(age, "Mars")).toBe(18.09);
     expect(calculator(age, "Jupiter")).toBe(2.87);
   });
-  test('Should return age in dog earth years when recieveing age on Earth in dog years', () => {
+  test('Should return age in dog Earth years when recieveing age on Earth in dog years', () => {
     expect(calculator(age, "Earth", "dog-years")).toBe(272);
+  });
+  test('Should return age in mayfly lifetimes in Jupiter years when recieveing age on Jupiter in mayfly-lifetimes', () => {
+    expect(calculator(age, "Jupiter", "mayfly-lifetimes")).toBe(301355.82);
   });
 });
 
