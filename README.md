@@ -25,6 +25,7 @@ _This project was created for Epicodus bootcamp to show proficiency in the techn
 * _From the project directory, run `npm install` in the terminal to load necessary plugins and packages._
 * _Run `npm run start` to start the application._
 * _Alternatively, you can run `npm run build` and open dist/index.html in your preferred browser._
+* _In order to run tests, navigate to the project folder and run `npm run test` in the terminal._
 
 * _Or you can click [here](https://christophermneal.github.io/super-galactic-age-calculator) to visit the page on gh-pages._
 
