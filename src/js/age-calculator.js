@@ -16,5 +16,7 @@ export function calculator(age, planet) {
 export function animalConverter(age, animal) {
   if (animal === "dog-years") {
     return age *= 8;
-  } 
+  } else if (animal === "mayfly-lifetimes") {
+    return age *= 105120;
+  }
 }
