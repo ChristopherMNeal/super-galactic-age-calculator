@@ -22,5 +22,8 @@ describe ('calculator', () => {
     expect(calculator(age, "Mars")).toBe(18.09);
     expect(calculator(age, "Jupiter")).toBe(2.87);
   });
+  test('Should return age in dog earth years when recieveing age on Earth in dog years', () => {
+    expect(calculator(age, "Earth", "dog-years")).toBe(272);
+  });
 });
 
