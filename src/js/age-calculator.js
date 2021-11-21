@@ -11,6 +11,8 @@ export const planets = new Map(
 export function calculator(age, planet, animal) {
   if (animal === "dog-years") {
     age *= 8;
+  } else if (animal === "mayfly-lifetimes") {
+    age *= 105120;
   }
   const ageInt = parseInt(age);
   return parseFloat((ageInt/planets.get(planet)).toFixed(2));
