@@ -29,5 +29,8 @@ describe ('animalConverter', () => {
   test('Should convert age to age in dog years', () => {
     expect(animalConverter(age, "dog-years")).toBe(272);
   });
+  test('Should convert age to age in mayfly lifetimes', () => {
+    expect(animalConverter(age, "mayfly-lifetimes")).toBe(3574080);
+  });
 });
   
