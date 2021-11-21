@@ -1,5 +1,5 @@
 {
-  "name": "Galactic Age Calculator",
+  "name": "galactic-age-calculator",
   "version": "1.0.0",
   "description": "An application to determine your age on different planets",
   "main": "index.js",
