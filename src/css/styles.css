@@ -34,3 +34,10 @@ body {
   height: 100px;
   visibility: hidden;
 }
+
+.highlight {
+  background-color: yellow;
+  border: red, 2px, dashed;
+  width: fit-content;
+  padding: 0 10px 0 5px;
+}
