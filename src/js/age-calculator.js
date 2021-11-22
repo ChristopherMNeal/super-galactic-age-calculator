@@ -29,5 +29,5 @@ export function remainingYears(age, lifeExpectancy) {
 }
 
 export function getSunComparison(age) {
-  // return parseInt(4603000000/age);
+  return parseInt(4603000000/age);
 }
