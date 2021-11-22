@@ -31,12 +31,9 @@ $("form#user-info").submit(function(event) {
   const animal = $("input:radio[name=animal-years]:checked").val();
   const planet = $("input:radio[name=planet]:checked").val();
   const ageOnPlanet = calculator(age, planet, animal);
-  console.log(ageOnPlanet);
   const animalPlanet = getAnimalPlanet(animal, planet);
   const lifeExpectancy = calculator(longevityInput(), planet, animal);
-  console.log(lifeExpectancy);
   const yearsLeft = remainingYears(ageOnPlanet, lifeExpectancy);
-  console.log(yearsLeft);
   if (animal === "mayfly-lifetimes") {
     const sunComparison = getSunComparison(ageOnPlanet);
     $(".sun-comparison-span").text(sunComparison);
