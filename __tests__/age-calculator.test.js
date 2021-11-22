@@ -25,7 +25,7 @@ describe ('calculator', () => {
   test('Should convert age to age in dog years on Earth', () => {
     expect(calculator(age, "Earth", "dog-years")).toBe(272);
   });
-  // test('Should convert age to age in mayfly lifetimes on Earth', () => {
-  //   expect(calculator(age, "Earth", "mayfly-lifetimes")).toBe(3574080);
-  // });
+  test('Should convert age to age in mayfly lifetimes on Earth', () => {
+    expect(calculator(age, "Earth", "mayfly-lifetimes")).toBe(3574080);
+  });
 });

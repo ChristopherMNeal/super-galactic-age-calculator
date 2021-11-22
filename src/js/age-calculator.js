@@ -12,7 +12,7 @@ export function calculator(age, planet, animal) {
   let planetMultiplyer = planets.get(planet);
   if (animal === "dog-years") {
     return parseFloat(((age/planetMultiplyer) * 8).toFixed(2));
-  // } else if (animal === "mayfly-lifetimes") {
+  } else if (animal === "mayfly-lifetimes") {
   //   return parseFloat(((age/planetMultiplyer) * 105120).toFixed(2));
   } else {
     return parseFloat(((age/planetMultiplyer)).toFixed(2));
