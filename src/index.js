@@ -18,11 +18,9 @@ function remainingYears() {
   const animal = $("input:radio[name=animal-years]:checked").val();
   let age = $("#user-age").val();
   let lifeExpectancy = userDemographic.longevityAdjuster();
-  // should I just animalConvert yearsLeft? test once i get everything working
-  animalConverter(lifeExpectancy, animal);
-  animalConverter(age, animal);
   const planet = $("input:radio[name=planet]:checked").val();
   let yearsLeft = lifeExpectancy - age;
+  yearsLeft = animalConverter(yearsLeft, animal);
   let planetYearsLeft = calculator(yearsLeft, planet, animal);
   // move this calculation to business logic and the formatting to a separate UI function
   const animalPlanet= getAnimalPlanet(animal, planet);
@@ -36,7 +34,7 @@ function remainingYears() {
 
 // I left jquery selectors in, in case it's not practial to querey the dom...?
 function getAnimalPlanet(animal, planet) {
-  // const planet = $("input:radio[name=planet]:checked").val();
+  const planet = $("input:radio[name=planet]:checked").val();
   // if ($("input:radio[name=animal-years]:checked").val() === "dog-years") {
   if (animal === "dog-years") {
     return planet + " dog years";
@@ -64,10 +62,10 @@ $(document).ready(function() {
     const name = $("#user-name").val();
     const age = $("#user-age").val();
     const animal = $("input:radio[name=animal-years]:checked").val();
-    const convertedAge = animalConverter(age, animal);
     const planet = $("input:radio[name=planet]:checked").val();
+    const convertedAge = animalConverter(age, animal);
     const ageOnPlanet = calculator(convertedAge, planet);
-    const animalPlanet = getAnimalPlanet();
+    const animalPlanet = getAnimalPlanet(animal, planet);
     const sunComparison = getSunComparison(ageOnPlanet, animalPlanet);
     const yearsLeft = remainingYears();
     $(".alerts").hide();
@@ -88,6 +86,7 @@ $(document).ready(function() {
       $("#planet-select").addClass("highlight");
     } else {
       $("#results").show();
+      // Put more of this into the HTML to make it easier to decode
       $("#results").html("Here are your results, " + name + "<br>Your age in " + animalPlanet + " is " + ageOnPlanet + ". <br>" + sunComparison + yearsLeft);
     }
   });

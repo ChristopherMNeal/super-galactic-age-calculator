@@ -18,5 +18,7 @@ export function animalConverter(age, animal) {
     return age *= 8;
   } else if (animal === "mayfly-lifetimes") {
     return age *= 105120;
+  } else {
+    return age;
   }
 }
