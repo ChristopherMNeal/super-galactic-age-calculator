@@ -8,28 +8,23 @@ export const planets = new Map(
   ]
 );
 
-export function calculator(age, planet) {
-  const ageInt = parseInt(age);
-  return parseFloat((ageInt/planets.get(planet)).toFixed(2));
-}
-
-export function animalConverter(age, animal) {
+export function calculator(age, planet, animal) {
+  let planetMultiplyer = planets.get(planet);
   if (animal === "dog-years") {
-    return age *= 8;
+    return parseFloat(((age/planetMultiplyer) * 8).toFixed(2));
   } else if (animal === "mayfly-lifetimes") {
-    return age *= 105120;
+    return parseFloat(((age/planetMultiplyer) * 105120).toFixed(2));
   } else {
-    return age;
+    return parseFloat(((age/planetMultiplyer)).toFixed(2));
   }
 }
 
-export function remainingYears(animal, age, lifeExpectancy) {
-  const yearsLeft = lifeExpectancy - age;
-  let animalYearsLeft = animalConverter(yearsLeft, animal);
+export function remainingYears(age, lifeExpectancy) {
+  let yearsLeft = lifeExpectancy - age;
   if (age > lifeExpectancy) {
-    return animalYearsLeft *= -1;
+    return yearsLeft *= -1;
   } else {
-    return animalYearsLeft;
+    return yearsLeft;
   }
 }
 

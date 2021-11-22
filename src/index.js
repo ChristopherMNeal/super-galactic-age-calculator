@@ -3,7 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import { Demographic } from '../src/js/longevity-calculator';
-import { calculator, animalConverter, remainingYears, getSunComparison } from '../src/js/age-calculator';
+import { calculator, remainingYears, getSunComparison } from '../src/js/age-calculator';
 
 function longevityInput() {
   const genetics = (document.querySelectorAll('input[name="genetics"]:checked')).length;
@@ -27,24 +27,24 @@ function getAnimalPlanet(animal, planet) {
 $("form#user-info").submit(function(event) {
   event.preventDefault();
   const name = $("#user-name").val();
-  const age = $("#user-age").val();
+  const age = parseInt($("#user-age").val());
   const animal = $("input:radio[name=animal-years]:checked").val();
-  console.log(animal);
   const planet = $("input:radio[name=planet]:checked").val();
-  const convertedAge = animalConverter(age, animal);
-  const ageOnPlanet = calculator(convertedAge, planet);
+  const ageOnPlanet = calculator(age, planet, animal);
+  console.log(ageOnPlanet);
   const animalPlanet = getAnimalPlanet(animal, planet);
-  const lifeExpectancy = longevityInput();
-  const convertedLifeExpectancy = animalConverter(lifeExpectancy);
-  const planetLifeExpectancy = calculator(convertedLifeExpectancy);
-  const yearsLeft = remainingYears(animal, age, lifeExpectancy);
-  const planetYearsLeft = calculator(yearsLeft, planet);
+  const lifeExpectancy = calculator(longevityInput(), planet, animal);
+  console.log(lifeExpectancy);
+  const yearsLeft = remainingYears(ageOnPlanet, lifeExpectancy);
+  console.log(yearsLeft);
   if (animal === "mayfly-lifetimes") {
     const sunComparison = getSunComparison(ageOnPlanet);
     $(".sun-comparison-span").text(sunComparison);
     $("#sun-comparison").show();
+  } else {
+    $("#sun-comparison").hide();
   }
-  if (planetYearsLeft > planetLifeExpectancy) {
+  if (yearsLeft > lifeExpectancy) {
     $("#under-expectancy").hide();
   } else {
     $("#over-expectancy").hide();
@@ -69,6 +69,6 @@ $("form#user-info").submit(function(event) {
     $(".name-span").text(name);
     $(".animal-planet-span").text(animalPlanet);
     $(".age-on-planet-span").text(ageOnPlanet);
-    $(".planet-years-left-span").text(planetYearsLeft);
+    $(".planet-years-left-span").text(yearsLeft);
   }
 });
