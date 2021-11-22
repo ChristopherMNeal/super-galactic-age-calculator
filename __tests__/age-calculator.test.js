@@ -1,4 +1,4 @@
-import { animalConverter, planets, remainingYears } from '../src/js/age-calculator.js';
+import { getSunComparison, planets, remainingYears } from '../src/js/age-calculator.js';
 import { calculator } from '../src/js/age-calculator';
 
 describe ('planets', () => {
@@ -40,5 +40,11 @@ describe ('remainingYears(age, lifeExpectancy)', () => {
     const age = 80;
     const lifeExpectancy = 79;
     expect(remainingYears(age, lifeExpectancy)).toBe(1);
+  });
+});
+describe ('getSunComparison(age)', () => {
+  test('Should return inputted age divided by the age of the sun', () => {
+    const age = 34;
+    expect(getSunComparison(age)).toBe(135382352);
   });
 });
