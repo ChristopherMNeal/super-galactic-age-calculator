@@ -22,3 +22,17 @@ export function animalConverter(age, animal) {
     return age;
   }
 }
+
+export function remainingYears(animal, age, lifeExpectancy) {
+  const yearsLeft = lifeExpectancy - age;
+  let animalYearsLeft = animalConverter(yearsLeft, animal);
+  if (age > lifeExpectancy) {
+    return animalYearsLeft *= -1;
+  } else {
+    return animalYearsLeft;
+  }
+}
+
+export function getSunComparison(age) {
+  return parseInt(4603000000/age);
+}
