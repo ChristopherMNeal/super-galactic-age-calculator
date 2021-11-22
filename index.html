@@ -20,16 +20,18 @@
       <label for="animal-years">Don't Convert</label>
       <br>
       <h3>Please select a planet:</h3>
-      <input type="radio" id="earth" name="planet" value="Earth">
-      <label for="earth">Earth</label>
-      <input type="radio" id="mercury" name="planet" value="Mercury">
-      <label for="mercury">Mercury</label>
-      <input type="radio" id="venus" name="planet" value="Venus">
-      <label for="venus">Venus</label>
-      <input type="radio" id="mars" name="planet" value="Mars">
-      <label for="mars">Mars</label>
-      <input type="radio" id="jupiter" name="planet" value="Jupiter">
-      <label for="jupiter">Jupiter</label>
+      <div id="planet-select">
+        <input type="radio" id="earth" name="planet" value="Earth">
+        <label for="earth">Earth</label>
+        <input type="radio" id="mercury" name="planet" value="Mercury">
+        <label for="mercury">Mercury</label>
+        <input type="radio" id="venus" name="planet" value="Venus">
+        <label for="venus">Venus</label>
+        <input type="radio" id="mars" name="planet" value="Mars">
+        <label for="mars">Mars</label>
+        <input type="radio" id="jupiter" name="planet" value="Jupiter">
+        <label for="jupiter">Jupiter</label>
+      </div>
       <h2>Next, tell me a little about yourself so we can determine your life expectancy:</h2>
       <p>The average United States life expectancy is about 79 earth years.<br><span  class="aside">WARNING! This is not real health advice. The numbers are made up. If you're worried about your health, consult a doctor, not an online quiz.</span></p>
       <h3>Does your family have any of the following health complications?</h3>
@@ -70,7 +72,12 @@
     <p class="alerts" id="too-old">There's no way you're that old!</p>
     <p class="alerts" id="too-young">Oh, come on! Your age is a negative number?! Quit jackin' me around.</p>
     <p class="alerts" id="no-input">Please fill out your Name, Age, and select a planet!</p>
-    <div id="results"></div>
+    <div id="results">
+      <p>Here are your results, <span class="name-span"></span><br>Your age in <span class="animal-planet-span"></span> is <span class="age-on-planet-span"></span>.</p>
+      <p id="sun-comparison">By comparison, the sun is 4.6 billion years old... That's <span class="sun-comparison-span"></span> times older (in Earth years) than you are (in <span class="animal-planet-span"></span>).</p>
+      <p id="over-expectancy">Congrats! You've made it <span class="planet-years-left-span"></span> <span class="animal-planet-span"></span> past your life expectancy!</p>
+      <p id="under-expectancy">You have <span class="planet-years-left-span"></span> <span class="animal-planet-span"></span> left to live.</p>
+    </div>
     <div id="bottom-padding"></div>
   </div>
 <script type="text/javascript" src="bundle.js"></script></body>
