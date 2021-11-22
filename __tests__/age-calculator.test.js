@@ -22,15 +22,10 @@ describe ('calculator', () => {
     expect(calculator(age, "Mars")).toBe(18.09);
     expect(calculator(age, "Jupiter")).toBe(2.87);
   });
-});
-
-describe ('animalConverter', () => {
-  const age = 34;
-  test('Should convert age to age in dog years', () => {
-    expect(animalConverter(age, "dog-years")).toBe(272);
+  test('Should convert age to age in dog years on Earth', () => {
+    expect(calculator(age, "Earth", "dog-years")).toBe(272);
   });
-  test('Should convert age to age in mayfly lifetimes', () => {
-    expect(animalConverter(age, "mayfly-lifetimes")).toBe(3574080);
-  });
+  // test('Should convert age to age in mayfly lifetimes on Earth', () => {
+  //   expect(calculator(age, "Earth", "mayfly-lifetimes")).toBe(3574080);
+  // });
 });
-  
