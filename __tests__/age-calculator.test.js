@@ -1,4 +1,4 @@
-import { animalConverter, planets } from '../src/js/age-calculator.js';
+import { animalConverter, planets, remainingYears } from '../src/js/age-calculator.js';
 import { calculator } from '../src/js/age-calculator';
 
 describe ('planets', () => {
@@ -27,5 +27,13 @@ describe ('calculator', () => {
   });
   test('Should convert age to age in mayfly lifetimes on Earth', () => {
     expect(calculator(age, "Earth", "mayfly-lifetimes")).toBe(3574080);
+  });
+});
+
+describe ('remainingYears(age, lifeExpectancy)', () => {
+  test('Should difference between age and life expectancy', () => {
+    const age = 34;
+    const lifeExpectancy = 79;
+    expect(remainingYears(age, lifeExpectancy)).toBe(45);
   });
 });

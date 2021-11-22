@@ -20,14 +20,14 @@ export function calculator(age, planet, animal) {
 }
 
 export function remainingYears(age, lifeExpectancy) {
-  let yearsLeft = lifeExpectancy - age;
-  if (age > lifeExpectancy) {
-    return yearsLeft *= -1;
-  } else {
-    return yearsLeft;
-  }
+//   let yearsLeft = lifeExpectancy - age;
+//   if (age > lifeExpectancy) {
+//     return yearsLeft *= -1;
+//   } else {
+//     return yearsLeft;
+//   }
 }
 
-export function getSunComparison(age) {
-  return parseInt(4603000000/age);
-}
+// export function getSunComparison(age) {
+//   return parseInt(4603000000/age);
+// }
