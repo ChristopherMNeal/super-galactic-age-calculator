@@ -31,9 +31,14 @@ describe ('calculator', () => {
 });
 
 describe ('remainingYears(age, lifeExpectancy)', () => {
-  test('Should difference between age and life expectancy', () => {
+  test('Should return the difference between age and life expectancy', () => {
     const age = 34;
     const lifeExpectancy = 79;
     expect(remainingYears(age, lifeExpectancy)).toBe(45);
+  });
+  test('Should return the difference between age and life expectancy as a positive number even if age is greater than life expectancy', () => {
+    const age = 80;
+    const lifeExpectancy = 79;
+    expect(remainingYears(age, lifeExpectancy)).toBe(1);
   });
 });
